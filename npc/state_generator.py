@@ -9,7 +9,7 @@ from typing import Dict, Optional
 # 添加HelloAgents到Python路径
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'HelloAgents'))
 
-from hello_agents import HelloAgentsLLM
+from agent_structure.core import LLM
 from agents import NPC_ROLES
 
 class NPCBatchGenerator:
@@ -24,7 +24,7 @@ class NPCBatchGenerator:
         print("🎨 正在初始化批量对话生成器...")
         
         try:
-            self.llm = HelloAgentsLLM()
+            self.llm = LLM()
             self.enabled = True
             print("✅ 批量生成器初始化成功")
         except Exception as e:

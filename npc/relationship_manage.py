@@ -6,7 +6,8 @@ import os
 # 添加HelloAgents到Python路径
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'HelloAgents'))
 
-from hello_agents import SimpleAgent, HelloAgentsLLM
+from agent_structure.agents import SimpleAgent
+from agent_structure.core import LLM
 from typing import Dict
 import json
 import re
@@ -22,11 +23,11 @@ class RelationshipManager:
     """
     
     # ✅️
-    def __init__(self, llm: HelloAgentsLLM):
+    def __init__(self, llm: LLM):
         """初始化好感度管理器
         
         Args:
-            llm: HelloAgentsLLM实例
+            llm: LLM实例
         """
         self.llm = llm
         

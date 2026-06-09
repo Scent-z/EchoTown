@@ -7,8 +7,9 @@ import os
 # 添加HelloAgents到Python路径
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'HelloAgents'))
 
-from hello_agents import SimpleAgent, HelloAgentsLLM
-from hello_agents.memory import MemoryManager, MemoryConfig, MemoryItem
+from agent_structure.agents import SimpleAgent
+from agent_structure.core import LLM
+from agent_structure.memory import MemoryManager, MemoryConfig, MemoryItem
 from typing import Dict, List, Optional
 from datetime import datetime
 from relationship_manage import RelationshipManager
@@ -93,7 +94,7 @@ class NPCAgentManager:
         print("🤖 正在初始化NPC Agent系统...")
 
         try:
-            self.llm = HelloAgentsLLM()
+            self.llm = LLM()
             print("✅ LLM初始化成功")
         except Exception as e:
             print(f"❌ LLM初始化失败: {e}")
