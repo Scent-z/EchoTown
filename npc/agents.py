@@ -1,4 +1,5 @@
 """NPC Agent系统 - 支持记忆功能"""
+# ✅️
 
 import sys
 import os
